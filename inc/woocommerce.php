@@ -20,8 +20,8 @@ function aeae_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 300,
-			'single_image_width'    => 768,
+			'thumbnail_image_width' => 280,
+			'single_image_width'    => 480,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -41,7 +41,6 @@ add_action( 'after_setup_theme', 'aeae_woocommerce_setup' );
  * @return void
  */
 function aeae_woocommerce_scripts() {
-	wp_enqueue_style( 'aeae-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'aeae_woocommerce_scripts' );
 
@@ -169,7 +168,7 @@ if ( ! function_exists( 'aeae_woocommerce_cart_link' ) ) {
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d aa', '%d aa', WC()->cart->get_cart_contents_count(), 'aeae' ),
+				_n( '%d', '%d', WC()->cart->get_cart_contents_count(), 'aeae' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
