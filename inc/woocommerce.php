@@ -20,8 +20,8 @@ function aeae_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
-			'single_image_width'    => 300,
+			'thumbnail_image_width' => 300,
+			'single_image_width'    => 768,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -169,7 +169,7 @@ if ( ! function_exists( 'aeae_woocommerce_cart_link' ) ) {
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'aeae' ),
+				_n( '%d aa', '%d aa', WC()->cart->get_cart_contents_count(), 'aeae' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
